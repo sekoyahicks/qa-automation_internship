@@ -11,8 +11,8 @@ def open_main_page(context):
 
 @when('log in to the page')
 def log_in(context):
-    context.driver.find_element(By.CSS_SELECTOR, "[placeholder='Email']").send_keys('sekoyahicks@gmail.com')
-    context.driver.find_element(By.CSS_SELECTOR, "[placeholder='Password']").send_keys('403d57ef')
+    context.driver.find_element(By.CSS_SELECTOR, "[placeholder='Email']").send_keys('*************')
+    context.driver.find_element(By.CSS_SELECTOR, "[placeholder='Password']").send_keys('********')
     context.driver.find_element(By.CSS_SELECTOR, "[class='login-button w-button']").click()
     sleep(5)
 
