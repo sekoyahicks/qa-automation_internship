@@ -2,6 +2,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from support.logger import logger
+
 
 class Page:
     def __init__(self, driver):
@@ -9,6 +11,7 @@ class Page:
         self.wait = WebDriverWait(driver, 10)
 
     def open_url(self, url):
+        logger.info(f'Opening {url}...')
         self.driver.get(url)
 
     def find_element(self, *locator):

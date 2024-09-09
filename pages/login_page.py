@@ -9,7 +9,7 @@ class LoginPage(Page):
     LOGIN_BTN = (By.CSS_SELECTOR, "[class='login-button w-button']")
 
     def login(self):
-        self.input_text('***********', *self.LOGIN_USR)
-        self.input_text('********', *self.LOGIN_PWD)
+        self.input_text('sekoyahicks@gmail.com', *self.LOGIN_USR)
+        self.input_text('403d57ef', *self.LOGIN_PWD)
         self.wait_and_click(*self.LOGIN_BTN)
         sleep(5)

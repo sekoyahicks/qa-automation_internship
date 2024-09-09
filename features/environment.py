@@ -12,9 +12,9 @@ def browser_init(context, scenario_name):
     """
     :param context: Behave context
     """
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     # driver_path = GeckoDriverManager().install()
     # service = Service(driver_path)
@@ -32,19 +32,19 @@ def browser_init(context, scenario_name):
     # service = Service(executable_path='/Users/sekoyahicks/qa-automation_internship/geckodriver')
     # context.driver = webdriver.Firefox(service=service)
 
-    bs_user = 'sekoyahicks_y94NbO'
-    bs_key = 'hhgnx5FTP5Ct6LMZWegs'
-    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-
-    options = Options()
-    bstack_options = {
-        "browserName": "Chrome",
-        "os": "OS X",
-        "osVersion": "Ventura",
-        "browserVersion": 115.0
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
+    # bs_user = 'sekoyahicks_y94NbO'
+    # bs_key = 'hhgnx5FTP5Ct6LMZWegs'
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    #
+    # options = Options()
+    # bstack_options = {
+    #     "browserName": "Chrome",
+    #     "os": "OS X",
+    #     "osVersion": "Ventura",
+    #     "browserVersion": 115.0
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(5)
