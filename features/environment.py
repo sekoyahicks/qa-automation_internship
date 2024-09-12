@@ -12,6 +12,10 @@ def browser_init(context, scenario_name):
     """
     :param context: Behave context
     """
+    mobile_emulation = {"deviceName": "Nexus 5"}
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+
     driver_path = ChromeDriverManager().install()
     service = Service(driver_path)
     context.driver = webdriver.Chrome(service=service)
@@ -32,6 +36,7 @@ def browser_init(context, scenario_name):
     # service = Service(executable_path='/Users/sekoyahicks/qa-automation_internship/geckodriver')
     # context.driver = webdriver.Firefox(service=service)
 
+    #Mobile Setup
     # bs_user = 'sekoyahicks_y94NbO'
     # bs_key = 'hhgnx5FTP5Ct6LMZWegs'
     # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
@@ -39,7 +44,7 @@ def browser_init(context, scenario_name):
     # options = Options()
     # bstack_options = {
     #     "browserName": "Chrome",
-    #     "os": "OS X",
+    #     "deviceName": "Android",
     #     "osVersion": "Ventura",
     #     "browserVersion": 115.0
     # }
